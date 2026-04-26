@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#0a0f1e">
+  <meta name="description" content="SubnetMaster - Interactive CompTIA Network+ subnetting exam preparation. Practice CIDR notation, VLSM, network addressing, and route summarization with adaptive difficulty.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SubnetMaster">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://*.workers.dev; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content;">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icons/subnet-icon.svg">
+  <link rel="apple-touch-icon" href="icons/subnet-icon-192.png">
+  <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
+  <title>SubnetMaster | CompTIA Net+ Subnetting Prep</title>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" role="button">Skip to main content</a>
+  
+  <div class="offline-banner" id="offlineBanner" role="alert" aria-live="assertive">
+    <span aria-hidden="true">⚠️</span> Offline mode — using local question bank
+  </div>
+
+  <div class="container">
+    <header role="banner">
+      <div class="logo-area">
+        <img src="icons/subnet-icon.svg" alt="" width="40" height="40" class="logo-icon" aria-hidden="true">
+        <div>
+          <h1 class="logo-text">SubnetMaster</h1>
+          <p class="logo-sub">Net+ Prep</p>
+        </div>
+      </div>
+      <button class="theme-btn" id="themeToggle" aria-label="Switch to light mode" title="Toggle theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </header>
+
+    <main id="main-content" role="main" aria-label="Quiz interface">
+      <section class="stats-bar" aria-label="Player statistics" role="status" aria-live="polite">
+        <div class="stat-item">
+          <span class="stat-label">Score</span>
+          <span class="stat-value" id="scoreDisplay" aria-label="Current score">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Streak</span>
+          <span class="stat-value" id="streakDisplay" aria-label="Current streak">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Level</span>
+          <span class="stat-value" id="levelDisplay" aria-label="Current level">1</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Best</span>
+          <span class="stat-value" id="bestDisplay" aria-label="All-time high score">0</span>
+        </div>
+      </section>
+
+      <div class="progress-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Level progress" id="progressBar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div id="quizArea" class="card hidden" role="region" aria-label="Question area">
+        <div class="badges" id="badgesContainer" aria-label="Topic and difficulty"></div>
+        <p class="question-text" id="questionText" role="heading" aria-level="2"></p>
+        <fieldset class="options-grid" id="optionsContainer" role="radiogroup" aria-label="Answer options">
+          <legend class="sr-only">Choose your answer</legend>
+        </fieldset>
+        <div id="hintArea" class="hidden" role="region" aria-label="Hint" aria-live="polite"></div>
+        <div class="action-row">
+          <button class="btn btn-secondary" id="hintBtn" aria-label="Show hint for this question">Show Hint</button>
+          <button class="btn btn-primary" id="submitBtn" disabled aria-label="Submit your answer">Submit Answer</button>
+        </div>
+      </div>
+
+      <div id="resultArea" class="card hidden" role="region" aria-label="Answer result" aria-live="assertive"></div>
+      
+      <div id="loadingArea" class="card hidden" role="status" aria-label="Loading question" aria-live="polite">
+        <div class="loading-dots" aria-hidden="true">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <p class="loading-text">Generating adaptive question...</p>
+      </div>
+      
+      <div id="errorArea" class="card hidden" role="alert" aria-live="assertive">
+        <p class="error-icon" aria-hidden="true">⚠️</p>
+        <p id="errorMessage" class="error-text">Unable to load question</p>
+        <button class="btn btn-primary" id="retryBtn" aria-label="Try loading question again">Try Again</button>
+      </div>
+    </main>
+
+    <footer role="contentinfo">
+      <p>SubnetMaster · CompTIA Network+ Exam Preparation</p>
+      <p class="footer-help">Press <kbd>1</kbd>-<kbd>4</kbd> to select, <kbd>Enter</kbd> to submit</p>
+    </footer>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
