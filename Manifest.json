@@ -1,0 +1,46 @@
+{
+  "name": "SubnetMaster - CompTIA Net+ Subnetting Prep",
+  "short_name": "SubnetMaster",
+  "description": "Interactive subnetting exam preparation for CompTIA Network+ certification. Practice CIDR, VLSM, network addressing, and route summarization.",
+  "start_url": "/subnet-master/",
+  "scope": "/subnet-master/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a0f1e",
+  "theme_color": "#0a0f1e",
+  "categories": ["education", "utilities"],
+  "icons": [
+    {
+      "src": "icons/subnet-icon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/subnet-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/subnet-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshots/mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}
