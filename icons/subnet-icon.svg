@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="layer1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00e5a0"/>
+      <stop offset="100%" stop-color="#00c48a"/>
+    </linearGradient>
+    <linearGradient id="layer2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00d4aa"/>
+      <stop offset="100%" stop-color="#00b380"/>
+    </linearGradient>
+    <linearGradient id="layer3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00c397"/>
+      <stop offset="100%" stop-color="#00a276"/>
+    </linearGradient>
+    <linearGradient id="layer4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00b285"/>
+      <stop offset="100%" stop-color="#00916c"/>
+    </linearGradient>
+    <linearGradient id="layer5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00a172"/>
+      <stop offset="100%" stop-color="#008062"/>
+    </linearGradient>
+    <linearGradient id="layer6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#009060"/>
+      <stop offset="100%" stop-color="#006f58"/>
+    </linearGradient>
+    <linearGradient id="layer7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#007f4e"/>
+      <stop offset="100%" stop-color="#005e4e"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="6" width="48" height="7" rx="3.5" fill="url(#layer1)" opacity="0.95"/>
+  <circle cx="14" cy="9.5" r="1.8" fill="#ffffff" opacity="0.9"/>
+  <rect x="10" y="16" width="44" height="7" rx="3.5" fill="url(#layer2)" opacity="0.9"/>
+  <circle cx="18" cy="19.5" r="1.8" fill="#ffffff" opacity="0.85"/>
+  <rect x="12" y="26" width="40" height="7" rx="3.5" fill="url(#layer3)" opacity="0.85"/>
+  <circle cx="22" cy="29.5" r="1.8" fill="#ffffff" opacity="0.8"/>
+  <rect x="14" y="36" width="36" height="7" rx="3.5" fill="url(#layer4)" opacity="0.8"/>
+  <circle cx="26" cy="39.5" r="1.8" fill="#ffffff" opacity="0.75"/>
+  <rect x="16" y="46" width="32" height="7" rx="3.5" fill="url(#layer5)" opacity="0.75"/>
+  <circle cx="30" cy="49.5" r="1.8" fill="#ffffff" opacity="0.7"/>
+  <rect x="18" y="56" width="28" height="7" rx="3.5" fill="url(#layer6)" opacity="0.7"/>
+  <circle cx="34" cy="59.5" r="1.8" fill="#ffffff" opacity="0.65"/>
+  <rect x="20" y="66" width="24" height="7" rx="3.5" fill="url(#layer7)" opacity="0.65"/>
+  <circle cx="38" cy="69.5" r="1.8" fill="#ffffff" opacity="0.6"/>
+</svg>
